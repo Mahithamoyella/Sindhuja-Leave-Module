@@ -2,7 +2,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:14
-    container_name: postgres
+    container_name: postgres134
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
@@ -18,7 +18,7 @@ services:
   backend:
     build:
       context: ./Backend
-    container_name: backend
+    container_name: backend345
     depends_on:
       - postgres
     environment:
@@ -35,7 +35,7 @@ services:
   employee-leave:
     build:
       context: ./Employee-leave
-    container_name: employee-leave
+    container_name: employee-leave14
     depends_on:
       - backend
     ports:
@@ -46,7 +46,7 @@ services:
   hr-leave:
     build:
       context: ./HR-leave
-    container_name: hr-leave
+    container_name: hr-leave34
     depends_on:
       - backend
     ports:
