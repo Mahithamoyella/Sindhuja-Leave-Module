@@ -5,10 +5,10 @@ services:
     container_name: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin834
+      POSTGRES_PASSWORD: admin123
       POSTGRES_DB: leave_management
     ports:
-      - "5435:5432"
+      - "5202:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -25,10 +25,10 @@ services:
       DB_HOST: postgres
       DB_PORT: 5432
       DB_USER: postgres
-      DB_PASSWORD: admin834
+      DB_PASSWORD: admin123
       DB_NAME: leave_management
     ports:
-      - "3003:3003"
+      - "3202:3202"
     networks:
       - leave-net
 
@@ -39,7 +39,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "8005:80"
+      - "8004:80"
     networks:
       - leave-net
 
@@ -50,7 +50,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "8006:80"
+      - "8005:80"
     networks:
       - leave-net
 volumes:
